@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Menu Online</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+      :root {
+        --cream: #f8f5f0;
+        --coklat: #7b4b2a;
+        --coklat-muda: #a47551;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--cream);
+        margin: 0;
+        padding: 0;
+        color: var(--coklat);
+      }
+
+      /* HEADER */
+      header {
+        background-color: var(--coklat);
+        color: white;
+        text-align: center;
+        padding: 1.5rem 0;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      header p {
+        margin: 0.5rem 0 0;
+        color: #f5e8dc;
+        font-size: 1rem;
+      }
+
+      /* GRID MENU */
+      .menu-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+        padding: 3rem 2rem;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .menu-card {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .menu-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .menu-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .menu-info {
+        padding: 1.3rem;
+      }
+
+      .menu-info h3 {
+        margin: 0 0 0.4rem;
+        font-size: 1.2rem;
+        color: var(--coklat);
+      }
+
+      .menu-info p {
+        margin: 0 0 0.8rem;
+        color: #555;
+        font-size: 0.95rem;
+      }
+
+      .price {
+        font-weight: 600;
+        color: var(--coklat-muda);
+        font-size: 1rem;
+      }
+
+      .btn-pesan {
+        display: inline-block;
+        margin-top: 1rem;
+        background-color: var(--coklat);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-pesan:hover {
+        background-color: var(--coklat-muda);
+      }
+
+      /* FORM PEMBAYARAN */
+      .form-container {
+        background-color: white;
+        border-radius: 15px;
+        padding: 2rem;
+        max-width: 600px;
+        margin: 2rem auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container h2 {
+        text-align: center;
+        color: var(--coklat);
+        margin-bottom: 1.5rem;
+      }
+
+      form label {
+        display: block;
+        margin-top: 1rem;
+        font-weight: 600;
+      }
+
+      form input,
+      form select {
+        width: 100%;
+        padding: 0.7rem;
+        margin-top: 0.4rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      form input:focus,
+      form select:focus {
+        border-color: var(--coklat-muda);
+        outline: none;
+      }
+
+      .btn-bayar {
+        display: block;
+        margin: 1.5rem auto 0;
+        background-color: var(--coklat);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-bayar:hover {
+        background-color: var(--coklat-muda);
+      }
+
+      footer {
+        background-color: var(--coklat);
+        color: white;
+        text-align: center;
+        padding: 1.2rem;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>🍴 Daftar Menu Online</h1>
+      <p>Pilih menu favorit dan lakukan pembayaran langsung!</p>
+    </header>
+
+    <main>
+      <!-- MENU LIST -->
+      <div class="menu-container">
+        <div class="menu-card">
+          <img src="img/nasigoreng.jpg" alt="Nasi Goreng Spesial" />
+          <div class="menu-info">
+            <h3>Nasi Goreng Spesial</h3>
+            <p>Nasi goreng dengan telur, ayam suwir, dan sambal terasi.</p>
+            <span class="price">Rp25.000</span><br />
+            <a href="#form-pesan" class="btn-pesan">Pesan</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="img/miegoreng.jpg" alt="Mie Goreng Jawa" />
+          <div class="menu-info">
+            <h3>Mie Goreng Jawa</h3>
+            <p>Mie goreng tradisional dengan bumbu khas Jawa pedas gurih.</p>
+            <span class="price">Rp22.000</span><br />
+            <a href="#form-pesan" class="btn-pesan">Pesan</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="img/ayambakar.jpg" alt="Ayam Bakar Madu" />
+          <div class="menu-info">
+            <h3>Ayam Bakar Madu</h3>
+            <p>Ayam bakar lembut dengan bumbu madu manis pedas.</p>
+            <span class="price">Rp30.000</span><br />
+            <a href="#form-pesan" class="btn-pesan">Pesan</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="img/esteh.jpg" alt="Es Teh Manis" />
+          <div class="menu-info">
+            <h3>Es Teh Manis</h3>
+            <p>Segelas es teh manis dingin untuk menemani makan Anda.</p>
+            <span class="price">Rp8.000</span><br />
+            <a href="#form-pesan" class="btn-pesan">Pesan</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="img/sate.jpg" alt="Sate Ayam" />
+          <div class="menu-info">
+            <h3>Sate Ayam</h3>
+            <p>10 tusuk sate ayam dengan bumbu kacang gurih dan lontong.</p>
+            <span class="price">Rp28.000</span><br />
+            <a href="#form-pesan" class="btn-pesan">Pesan</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="img/jusmangga.jpg" alt="Jus Mangga Segar" />
+          <div class="menu-info">
+            <h3>Jus Mangga Segar</h3>
+            <p>Jus buah mangga alami tanpa pemanis buatan.</p>
+            <span class="price">Rp12.000</span><br />
+            <a href="#form-pesan" class="btn-pesan">Pesan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM PEMBAYARAN -->
+      <div class="form-container" id="form-pesan">
+        <h2>🧾 Form Pemesanan & Pembayaran</h2>
+        <form>
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" placeholder="Masukkan nama Anda" required />
+
+          <label for="menu">Pilih Menu</label>
+          <select id="menu" required>
+            <option value="">-- Pilih Menu --</option>
+            <option value="nasigoreng">Nasi Goreng Spesial - Rp25.000</option>
+            <option value="miegoreng">Mie Goreng Jawa - Rp22.000</option>
+            <option value="ayambakar">Ayam Bakar Madu - Rp30.000</option>
+            <option value="esteh">Es Teh Manis - Rp8.000</option>
+            <option value="sate">Sate Ayam - Rp28.000</option>
+            <option value="jusmangga">Jus Mangga Segar - Rp12.000</option>
+          </select>
+
+          <label for="jumlah">Jumlah Pesanan</label>
+          <input type="number" id="jumlah" min="1" value="1" required />
+
+          <label for="pembayaran">Metode Pembayaran</label>
+          <select id="pembayaran" required>
+            <option value="">-- Pilih Metode --</option>
+            <option value="transfer">Transfer Bank</option>
+            <option value="ewallet">E-Wallet (OVO, DANA, GoPay)</option>
+            <option value="cod">Bayar di Tempat (COD)</option>
+          </select>
+
+          <button type="submit" class="btn-bayar">Bayar Sekarang</button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      © 2025 Dapur Nusantara | Pemesanan Online & Pembayaran Aman
+    </footer>
+  </body>
+</html>

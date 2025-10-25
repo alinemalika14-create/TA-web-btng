@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aline Nailul Malika – Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* 🌈 WARNA UTAMA */
+      :root {
+        --warna-utama: #8a6b4f;
+        --warna-utama-hover: #bda48a;
+        --warna-gradient1: #f6efe6;
+        --warna-gradient2: #fff9f3;
+      }
+      
+       /* 🌿 Dekorasi daun lembut di background */
+      body:before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("imgse/godong.jpg");
+        background-repeat: repeat;
+        background-size: 300px;
+        opacity: 0.12;
+        z-index: -1;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+     
+
+      /* ✨ ANIME KARAKTER */
+      .anime-character {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 160px;
+        height: 160px;
+        z-index: 100;
+        animation: melambai 4s ease-in-out infinite;
+        cursor: pointer;
+      }
+
+      @keyframes melambai {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-8px) rotate(2deg); }
+      }
+
+      /* ✨ Sparkle (bintang kecil di sekitar karakter) */
+      .sparkle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: gold;
+        border-radius: 50%;
+        animation: sparkleMove 3s linear infinite;
+        opacity: 0.7;
+      }
+      .sparkle:nth-child(2) { top: 20%; left: -15px; animation-delay: 1s; }
+      .sparkle:nth-child(3) { top: 60%; right: -15px; animation-delay: 2s; }
+      @keyframes sparkleMove {
+        0% { transform: translateY(0) scale(0.5); opacity: 0.7; }
+        50% { transform: translateY(-10px) scale(1.2); opacity: 1; }
+        100% { transform: translateY(0) scale(0.5); opacity: 0.7; }
+      }
+
+      /* 🌸 Animasi background lembut */
+      body {
+        background: linear-gradient(120deg, #fffaf4, #fefcf8, #fffaf4);
+        background-size: 400% 400%;
+        animation: gerakLatar 10s ease infinite;
+      }
+
+      @keyframes gerakLatar {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      
+
+      /* 🌟 Efek glow pada tombol */
+      .glow-button {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glow-button::before {
+        content: "";
+        position: absolute;
+        top: 0; left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+        transition: 0.6s;
+      }
+
+      .glow-button:hover::before {
+        left: 100%;
+      }
+
+      /* 💫 Hover animasi kartu proyek */
+      .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-8px) rotateZ(-1deg);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+
+      /* Warna utilitas */
+      .text-warna-utama { color: var(--warna-utama); }
+      .bg-warna-utama { background-color: var(--warna-utama); }
+      .bg-warna-utama-hover:hover { background-color: var(--warna-utama-hover); }
+      .from-warna-gradient1 {
+        --tw-gradient-from: var(--warna-gradient1);
+        --tw-gradient-to: rgb(255 255 255 / 0);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+      }
+      .to-warna-gradient2 { --tw-gradient-to: var(--warna-gradient2); }
+
+    </style>
+  </head>
+
+  <body class="text-gray-900">
+
+    <!-- Karakter anime -->
+    <div id="alineAnime" class="anime-character">
+      <img src="img/ChatGPT Image 22 Okt 2025, 22.16.41.png" alt="Aline Anime" class="w-full h-full object-contain" />
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow z-50">
+      <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+        <h1 class="text-2xl font-bold text-warna-utama">Aline Nailul Malika</h1>
+        <ul class="hidden md:flex space-x-8 font-medium">
+          <li><a href="#home" class="hover:text-warna-utama">Beranda</a></li>
+          <li><a href="#about" class="hover:text-warna-utama">Tentang</a></li>
+          <li><a href="#projects" class="hover:text-warna-utama">Proyek</a></li>
+          <li><a href="#contact" class="hover:text-warna-utama">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-warna-gradient1 to-warna-gradient2 text-center px-6">
+      <img src="img/ChatGPT Image 22 Okt 2025, 22.29.37.png" alt="Profil" class="w-80 h-80 rounded-full  mb-4" />
+      <h2 class="text-4xl font-extrabold mb-3 text-warna-utama typing">Awooo....Kenalin Ku Aline</h2>
+      <p class="text-lg max-w-xl text-gray-600 mb-6">
+        Seorang web developer pemula yang suka menciptakan tampilan yang imut kyut dengan tambahan dazaicholic.
+      </p>
+      <a href="#projects" class="glow-button bg-warna-utama text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition">
+         Lihat Portofolio
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-6 md:px-20 text-center md:text-left md:flex items-center">
+        <img src="img/ChatGPT Image 22 Okt 2025, 22.16.41.png" alt="Tentang Saya" class="w-80 h-64 object-cover rounded-xl mx-auto md:mx-0 mb-6 md:mb-0 md:mr-12 " />
+        <div>
+          <h3 class="text-3xl font-bold text-warna-utama mb-4">Tentang Saya</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Awoo..... aku Aline, seorang mahasiswa yang sedang belajar membuat website profesional menggunakan HTML, CSS, dan Tailwind. Tujuan saya adalah menguasai desain web responsif dan interaktif untuk menciptakan pengalaman pengguna yang menarik.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20 bg-gray-100">
+      <div class="container mx-auto text-center">
+        <h3 class="text-3xl font-bold text-warna-utama mb-10">Karya & Proyek</h3>
+        <div class="grid gap-8 md:grid-cols-3 px-6">
+          <div class="project-card bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="img/biu.png" alt="Proyek 1" class="rounded-t-xl" />
+            <div class="p-4">
+              <h4 class="font-semibold text-lg mb-2">Landing Page Travel</h4>
+              <p class="text-gray-600 text-sm">Website promosi dengan animasi scroll dan tampilan minimalis.</p>
+            </div>
+          </div>
+          <div class="project-card bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="img/biu.png" alt="Proyek 2" class="rounded-t-xl" />
+            <div class="p-4">
+              <h4 class="font-semibold text-lg mb-2">Dashboard Data</h4>
+              <p class="text-gray-600 text-sm">Halaman dashboard responsif menggunakan Tailwind Grid & ChartJS.</p>
+            </div>
+          </div>
+          <div class="project-card bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="img/biu.png" alt="Proyek 3" class="rounded-t-xl" />
+            <div class="p-4">
+              <h4 class="font-semibold text-lg mb-2">Web Portfolio</h4>
+              <p class="text-gray-600 text-sm">Portofolio pribadi modern dengan efek hover dan animasi halus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto text-center">
+        <h3 class="text-3xl font-bold text-warna-utama mb-6">Hubungi Saya</h3>
+        <form class="max-w-md mx-auto bg-gray-50 rounded-xl shadow p-6 space-y-4">
+          <input type="text" placeholder="Nama" class="w-full p-3 border border-gray-300 rounded" required />
+          <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded" required />
+          <textarea placeholder="Pesan..." rows="4" class="w-full p-3 border border-gray-300 rounded"></textarea>
+          <button type="submit" class="glow-button bg-warna-utama text-white w-full py-3 rounded-lg hover:shadow-lg transition">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-warna-utama text-white text-center py-6">
+      <p>© 2025 Aline Nailul Malika. Dibuat dengan menggunakan Tailwind CSS.</p>
+    </footer>
+
+  </body>
+</html>

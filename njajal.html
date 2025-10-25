@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aline Nailul Malika – Portofolio Anime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --warna-utama: #957c62;
+        --warna-utama-hover: #e2b59a;
+        --warna-gradient1: #ecd1a3;
+        --warna-gradient2: #f8f5ec;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* karakter anime di pojok */
+      .anime-character {
+        position: relative;
+        bottom: 20px;
+        right: 20px;
+        width: 160px;
+        height: 160px;
+        z-index: 100;
+        animation: melambai 4s ease-in-out infinite;
+        cursor: pointer;
+      }
+
+      @keyframes melambai {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-8px) rotate(2deg);
+        }
+      }
+
+      /* efek sparkle */
+      .sparkle {
+        position: absolute;
+        background: radial-gradient(circle, #ffe7c3 0%, transparent 70%);
+        border-radius: 50%;
+        animation: blink 2s infinite ease-in-out;
+        pointer-events: none;
+      }
+
+      @keyframes blink {
+        0%, 100% {
+          opacity: 0.3;
+          transform: scale(0.8);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      .sparkle:nth-child(1) { top: 10%; left: 80%; width: 20px; height: 20px; animation-delay: 0.2s; }
+      .sparkle:nth-child(2) { top: 40%; left: 60%; width: 15px; height: 15px; animation-delay: 0.5s; }
+      .sparkle:nth-child(3) { top: 70%; left: 85%; width: 25px; height: 25px; animation-delay: 0.8s; }
+
+      /* tombol musik / aksi kecil */
+      #toggleCharacter {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: var(--warna-utama);
+        color: white;
+        padding: 10px 18px;
+        border-radius: 9999px;
+        font-weight: 600;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        cursor: pointer;
+        z-index: 110;
+      }
+      #toggleCharacter:hover {
+        background-color: var(--warna-utama-hover);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900 relative">
+
+    <!-- Tombol kontrol -->
+    <button id="toggleCharacter">🌸 Sembunyikan Dazai</button>
+
+    <!-- Karakter anime -->
+    <div id="alineAnime" class="anime-character">
+      <img src="img/ChatGPT Image 22 Okt 2025, 22.16.41.png" alt="Aline Anime" class="w-full h-full object-contain" />
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow z-50">
+      <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+        <h1 class="text-2xl font-bold text-[var(--warna-utama)]">Aline Nailul Malika</h1>
+        <ul class="hidden md:flex space-x-8 font-medium">
+          <li><a href="#home" class="hover:text-[var(--warna-utama)]">Beranda</a></li>
+          <li><a href="#about" class="hover:text-[var(--warna-utama)]">Tentang</a></li>
+          <li><a href="#projects" class="hover:text-[var(--warna-utama)]">Proyek</a></li>
+          <li><a href="#contact" class="hover:text-[var(--warna-utama)]">Kontak</a></li>
+        </ul>
+        <button id="menu-btn" class="md:hidden text-[var(--warna-utama)] text-2xl">☰</button>
+      </nav>
+      <ul id="mobile-menu" class="hidden bg-white text-center pb-4 md:hidden space-y-2">
+        <li><a href="#home" class="block py-1">Beranda</a></li>
+        <li><a href="#about" class="block py-1">Tentang</a></li>
+        <li><a href="#projects" class="block py-1">Proyek</a></li>
+        <li><a href="#contact" class="block py-1">Kontak</a></li>
+      </ul>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-[var(--warna-gradient1)] to-[var(--warna-gradient2)] text-center px-6">
+      <h2 class="text-4xl font-extrabold mb-3 text-[var(--warna-utama)]">🌷 Halo, Aku Aline versi Anime!</h2>
+      <p class="text-lg max-w-xl text-gray-600 mb-6">
+        Web developer imut yang siap menciptakan website menawan dan responsif!✨  
+        Yuk, jelajahi dunia coding dengan gaya kawaii~ 💻💖
+      </p>
+      <a href="#projects" class="bg-[var(--warna-utama)] text-white px-6 py-3 rounded-lg shadow hover:bg-[var(--warna-utama-hover)] transition">
+        🌸 Lihat Karya
+      </a>
+    </section>
+
+    <!-- Bagian lain tetap sama -->
+    <section id="about" class="py-20 bg-white text-center">
+      <h3 class="text-3xl font-bold text-[var(--warna-utama)] mb-4">Tentang Aline</h3>
+      <p class="max-w-2xl mx-auto text-gray-600">
+        Aku mahasiswa yang senang membuat tampilan web dengan sentuhan lembut dan elegan.  
+        Saat tak sedang ngoding, aku suka menggambar karakter anime dan menyesap kopi latte 🍵✨  
+        Portofolio ini kubuat agar semangat belajarku terpancar lewat desain yang ceria namun profesional.
+      </p>
+    </section>
+
+    <section id="projects" class="py-20 bg-gray-100 text-center">
+      <h3 class="text-3xl font-bold text-[var(--warna-utama)] mb-8">Proyek Favoritku 💫</h3>
+      <div class="grid gap-8 md:grid-cols-3 px-6">
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+          <img src="img/project1.jpg" alt="Proyek 1" class="rounded-xl mb-3" />
+          <h4 class="font-semibold text-lg">Landing Page Travel</h4>
+          <p class="text-gray-600 text-sm">Desain cerah dan clean untuk situs perjalanan impian ✈️</p>
+        </div>
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+          <img src="img/project2.jpg" alt="Proyek 2" class="rounded-xl mb-3" />
+          <h4 class="font-semibold text-lg">Dashboard Data</h4>
+          <p class="text-gray-600 text-sm">Analisis data real-time dengan layout futuristik 📊</p>
+        </div>
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+          <img src="img/project3.jpg" alt="Proyek 3" class="rounded-xl mb-3" />
+          <h4 class="font-semibold text-lg">Web Portfolio</h4>
+          <p class="text-gray-600 text-sm">Portofolio kawaii dengan gaya lembut & efek animasi 💖</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[var(--warna-utama)] text-white text-center py-6">
+      <p>© 2025 Aline Nailul Malika | Versi Anime 🌸</p>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const btn = document.getElementById("toggleCharacter");
+      const alineAnime = document.getElementById("alineAnime");
+      let visible = true;
+      btn.addEventListener("click", () => {
+        visible = !visible;
+        alineAnime.style.display = visible ? "block" : "none";
+        btn.textContent = visible ? "🌸 Sembunyikan Aline" : "🌼 Tampilkan Aline";
+      });
+    </script>
+  </body>
+</html>

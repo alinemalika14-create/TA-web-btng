@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Proyek</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+      :root {
+        --cream: #f8f5f0;
+        --coklat: #7b4b2a;
+        --coklat-muda: #a47551;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--cream);
+        margin: 0;
+        padding: 0;
+        color: var(--coklat);
+      }
+
+      header {
+        text-align: center;
+        background-color: var(--coklat);
+        color: white;
+        padding: 2rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      header p {
+        margin: 0.5rem 0 0;
+        font-size: 1rem;
+        color: #f5e8dc;
+      }
+
+      /* ===== GRID PORTFOLIO ===== */
+      .portfolio-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 3rem;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .card:hover img {
+        transform: scale(1.05);
+      }
+
+      .card-content {
+        padding: 1.5rem;
+      }
+
+      .card-content h4 {
+        margin: 0 0 0.5rem;
+        font-size: 1.3rem;
+        color: var(--coklat);
+      }
+
+      .card-content p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .btn-detail {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: var(--coklat);
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-detail:hover {
+        background-color: var(--coklat-muda);
+      }
+
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        background-color: var(--coklat);
+        color: white;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Portofolio Proyek Saya</h1>
+      <p>Kumpulan karya dengan desain modern dan animasi halus</p>
+    </header>
+
+    <main>
+      <div class="portfolio-container">
+        <!-- Kartu 1 -->
+        <div class="card">
+          <img src="img/project1.jpg" alt="Proyek 1" />
+          <div class="card-content">
+            <h4>Website Kopi</h4>
+            <p>Desain website bertema kopi dengan palet warna hangat dan layout minimalis.</p>
+            <a href="#" class="btn-detail">Lihat Detail</a>
+          </div>
+        </div>
+
+        <!-- Kartu 2 -->
+        <div class="card">
+          <img src="img/project2.jpg" alt="Proyek 2" />
+          <div class="card-content">
+            <h4>Sistem Informasi Pertanian</h4>
+            <p>Aplikasi web sederhana untuk membantu petani mengelola hasil panen dan stok bibit.</p>
+            <a href="#" class="btn-detail">Lihat Detail</a>
+          </div>
+        </div>
+
+        <!-- Kartu 3 -->
+        <div class="card">
+          <img src="img/project3.jpg" alt="Proyek 3" />
+          <div class="card-content">
+            <h4>Web Portfolio</h4>
+            <p>Portofolio pribadi modern dengan efek hover dan animasi halus yang responsif.</p>
+            <a href="#" class="btn-detail">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      © 2025 Nama Kamu | Portofolio Web Desain
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengukuran pH Air (Interaktif)</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #e7f3ff;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #0077b6;
+        color: white;
+        text-align: center;
+        padding: 1.5rem 0;
+      }
+      main {
+        max-width: 500px;
+        margin: 3rem auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #0077b6;
+      }
+      input {
+        padding: 0.6rem;
+        width: 80%;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      button {
+        background-color: #0077b6;
+        color: white;
+        border: none;
+        padding: 0.7rem 1.2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      button:hover {
+        background-color: #005f87;
+      }
+      .hasil {
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      .asam { color: #d62828; }
+      .netral { color: #00b894; }
+      .basa { color: #0077b6; }
+      footer {
+        background-color: #0077b6;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>💧 Pengukuran pH Air (Interaktif)</h1>
+      <p>Masukkan nilai pH untuk mengetahui jenis air</p>
+    </header>
+    <main>
+      <label for="ph">Masukkan Nilai pH:</label><br />
+      <input type="number" id="ph" step="0.1" min="0" max="14" placeholder="contoh: 6.5" />
+      <br />
+      <button onclick="cekPh()">Cek Hasil</button>
+
+      <div class="hasil" id="hasil"></div>
+    </main>
+    <footer>
+      © 2025 Sistem Monitoring pH Air | Versi Interaktif
+    </footer>
+
+    <script>
+      function cekPh() {
+        const nilai = parseFloat(document.getElementById("ph").value);
+        const hasil = document.getElementById("hasil");
+
+        if (isNaN(nilai)) {
+          hasil.innerHTML = "⚠️ Masukkan angka pH terlebih dahulu.";
+          hasil.className = "hasil";
+          return;
+        }
+
+        if (nilai < 7) {
+          hasil.innerHTML = `Nilai pH = ${nilai.toFixed(1)} → Air bersifat <span class="asam">Asam 🍋</span>`;
+          hasil.className = "hasil asam";
+        } else if (nilai === 7) {
+          hasil.innerHTML = `Nilai pH = ${nilai.toFixed(1)} → Air bersifat <span class="netral">Netral 💧</span>`;
+          hasil.className = "hasil netral";
+        } else if (nilai > 7 && nilai <= 14) {
+          hasil.innerHTML = `Nilai pH = ${nilai.toFixed(1)} → Air bersifat <span class="basa">Basa 🧼</span>`;
+          hasil.className = "hasil basa";
+        } else {
+          hasil.innerHTML = "❌ Nilai pH tidak valid (0–14).";
+          hasil.className = "hasil";
+        }
+      }
+    </script>
+  </body>
+</html>
