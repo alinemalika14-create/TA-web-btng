@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Asep</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .neon-text {
+      color: #00ffc3;
+      text-shadow: 0 0 5px #00ffc3, 0 0 10px #00ffc3, 0 0 20px #00ffc3;
+    }
+
+    .nav-link:hover {
+      color: #00ffc3;
+    }
+
+    .glow-card:hover {
+      box-shadow: 0 0 15px #00ffc3;
+      transform: scale(1.05);
+      transition: 0.3s ease;
+    }
+
+    .active-btn {
+      background-color: #00ffc3;
+      color: #000;
+    }
+
+    .active-btn:hover {
+      background-color: #00e6ac;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-10 py-5 bg-black bg-opacity-70">
+    <h1 class="text-xl font-bold neon-text">Portfolio</h1>
+    <ul class="flex gap-8">
+      <li><a href="#" class="nav-link">Home</a></li>
+      <li><a href="#" class="nav-link">About</a></li>
+      <li><a href="#" class="nav-link text-[#00ffc3] border-b-2 border-[#00ffc3] pb-1">Portfolio</a></li>
+      <li><a href="#" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="px-10 py-14 text-center">
+    <h2 class="text-4xl font-bold neon-text mb-8">Projects</h2>
+
+    <!-- Filter Buttons -->
+    <div class="flex justify-center gap-4 mb-10">
+      <button class="border border-[#00ffc3] px-6 py-2 rounded-full hover:bg-[#00ffc3] hover:text-black transition">Project</button>
+      <button class="border border-[#00ffc3] px-6 py-2 rounded-full active-btn">Certificate</button>
+      <button class="border border-[#00ffc3] px-6 py-2 rounded-full hover:bg-[#00ffc3] hover:text-black transition">Tech Stack</button>
+    </div>
+
+    <!-- Project Grid -->
+    <div class="grid grid-cols-3 gap-6 justify-items-center">
+      <!-- Card 1 -->
+      <div class="glow-card rounded-lg overflow-hidden">
+        <img src="sertifikat.jpg" alt="Project 1" class="w-72 h-48 object-cover">
+      </div>
+
+      <!-- Card 2 -->
+      <div class="glow-card rounded-lg overflow-hidden">
+        <img src="img/ChatGPT Image 26 Okt 2025, 08.04.04.png" alt="Anime" class="w-72 h-48 object-cover">
+      </div>
+
+      <!-- Card 3 -->
+      <div class="glow-card rounded-lg overflow-hidden">
+        <img src="img/ChatGPT Image 26 Okt 2025, 08.04.04.png" alt="Foto Asep" class="w-72 h-48 object-cover">
+      </div>
+
+      <!-- Card 4 -->
+      <div class="glow-card rounded-lg overflow-hidden">
+        <img src="img/ChatGPT Image 26 Okt 2025, 08.04.04.png" alt="Anime" class="w-72 h-48 object-cover">
+      </div>
+
+      <!-- Card 5 -->
+      <div class="glow-card rounded-lg overflow-hidden">
+        <img src="img/ChatGPT Image 26 Okt 2025, 08.04.04.png" alt="Anime" class="w-72 h-48 object-cover">
+      </div>
+
+      <!-- Card 6 -->
+      <div class="glow-card rounded-lg overflow-hidden">
+        <img src="img/ChatGPT Image 26 Okt 2025, 08.04.04.png" alt="Foto Asep" class="w-72 h-48 object-cover">
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center text-gray-400 py-6 border-t border-gray-700 mt-10">
+    <p>© 2025 Asep. Dibuat dengan 💚 & Tailwind CSS</p>
+  </footer>
+
+</body>
+</html>

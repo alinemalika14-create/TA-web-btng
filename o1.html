@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Asep</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .neon-text {
+      text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2;
+    }
+
+    .neon-border {
+      box-shadow: 0 0 15px #00fff2, 0 0 25px #00fff2;
+    }
+
+    .hover-glow:hover {
+      box-shadow: 0 0 20px #00fff2, 0 0 40px #00fff2;
+      transform: scale(1.02);
+      transition: 0.3s ease;
+    }
+
+    .active-btn {
+      background-color: #00fff2;
+      color: #000;
+      box-shadow: 0 0 10px #00fff2, 0 0 30px #00fff2;
+    }
+
+    .btn {
+      border: 1px solid #00fff2;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #00fff2;
+      color: #000;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-10 py-4 bg-black/80 text-white sticky top-0">
+    <h1 class="text-lg font-bold text-cyan-400">Portfolio</h1>
+    <ul class="flex gap-8">
+      <li><a href="#" class="hover:text-cyan-400">Home</a></li>
+      <li><a href="#" class="hover:text-cyan-400">About</a></li>
+      <li><a href="#" class="text-cyan-400 underline">Portfolio</a></li>
+      <li><a href="#" class="hover:text-cyan-400">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Projects Section -->
+  
+    <!-- Filter Buttons -->
+    <div class="flex justify-center gap-4 mb-12">
+      
+      <button class="btn active-btn">Certificate</button>
+      
+    </div>
+
+    <!-- Gallery -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-10">
+      <div class="bg-gray-900 rounded-xl overflow-hidden hover-glow neon-border">
+        <img src="sertifikat.jpg" alt="Project" class="w-full h-52 object-cover" />
+      </div>
+
+      <div class="bg-gray-900 rounded-xl overflow-hidden hover-glow neon-border">
+        <img src="https://i.pinimg.com/736x/65/b3/09/65b309a4b1b0386a0b1a3a2c0b3f9b5b.jpg" alt="Anime 1" class="w-full h-52 object-cover" />
+      </div>
+
+      <div class="bg-gray-900 rounded-xl overflow-hidden hover-glow neon-border">
+        <img src="https://i.pinimg.com/736x/7f/1b/b5/7f1bb50e452df65b620dc5b4c2f44c35.jpg" alt="Asep" class="w-full h-52 object-cover" />
+      </div>
+
+      <div class="bg-gray-900 rounded-xl overflow-hidden hover-glow neon-border">
+        <img src="https://i.pinimg.com/736x/65/b3/09/65b309a4b1b0386a0b1a3a2c0b3f9b5b.jpg" alt="Anime 2" class="w-full h-52 object-cover" />
+      </div>
+
+      <div class="bg-gray-900 rounded-xl overflow-hidden hover-glow neon-border">
+        <img src="https://i.pinimg.com/736x/7f/1b/b5/7f1bb50e452df65b620dc5b4c2f44c35.jpg" alt="Asep 2" class="w-full h-52 object-cover" />
+      </div>
+
+      <div class="bg-gray-900 rounded-xl overflow-hidden hover-glow neon-border">
+        <img src="https://i.pinimg.com/736x/65/b3/09/65b309a4b1b0386a0b1a3a2c0b3f9b5b.jpg" alt="Anime 3" class="w-full h-52 object-cover" />
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

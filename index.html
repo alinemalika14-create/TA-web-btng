@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Asep</title>
+  <style>
+    /* === GAYA UMUM === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0b0b0b;
+      color: #ddd;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* === NAVBAR === */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: #0b0b0b;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #00ffcc;
+      font-weight: bold;
+      font-size: 20px;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      color: #00ffcc;
+      border-bottom: 2px solid #00ffcc;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 100px 60px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 42px;
+      color: white;
+    }
+
+    h1 span {
+      color: #00ffcc;
+      text-shadow: 0 0 15px #00ffcc;
+    }
+
+    /* Efek ketikan */
+    .typing {
+      color: #00ffcc;
+      font-weight: 400;
+      margin-top: -10px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #00ffcc;
+      width: 0;
+      animation: typing 4s steps(25) 1s forwards, blink 0.8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 260px; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    p {
+      line-height: 1.7;
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    /* === SOSIAL MEDIA === */
+    .social-icons {
+      margin: 25px 0;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      display: inline-block;
+      background: rgba(0, 255, 204, 0.1);
+      border-radius: 50%;
+      padding: 10px;
+      transition: 0.3s;
+    }
+
+    .social-icons img {
+      width: 24px;
+      filter: brightness(0) invert(1);
+    }
+
+    .social-icons a:hover {
+      box-shadow: 0 0 10px #00ffcc;
+      background: rgba(0, 255, 204, 0.2);
+    }
+
+    /* === TOMBOL === */
+    .btn {
+      display: inline-block;
+      background-color: #00ffcc;
+      color: #0b0b0b;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #00ffcc;
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    /* === FOTO PROFIL === */
+    .image-container {
+      position: relative;
+    }
+
+    .glow-circle {
+      border-radius: 50%;
+      padding: 10px;
+      background: radial-gradient(circle, rgba(254, 120, 196, 0.3), transparent 70%);
+      box-shadow: 0 0 30px  #00ffcc;
+      animation: pulse 3s infinite alternate;
+    }
+
+    .glow-circle img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid  #00ffcc;
+      box-shadow: 0 0 25px #00ffcc;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); box-shadow: 0 0 20px #00ffcc; }
+      to { transform: scale(1.05); box-shadow: 0 0 40px #ff66c4; }
+    }
+
+    /* === OBJEK MELAYANG === */
+    .floating {
+      position: absolute;
+      background-color: #00ffcc;
+      opacity: 0.15;
+      border-radius: 5px;
+      animation: float 10s infinite linear;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0) rotate(0deg); }
+      to { transform: translateY(-100vh) rotate(360deg); }
+    }
+
+    .shape1 { width: 40px; height: 40px; left: 10%; top: 80%; animation-delay: 0s; }
+    .shape2 { width: 20px; height: 20px; left: 30%; top: 90%; animation-delay: 2s; }
+    .shape3 { width: 25px; height: 25px; left: 70%; top: 85%; animation-delay: 4s; }
+    .shape4 { width: 35px; height: 35px; left: 90%; top: 95%; animation-delay: 6s; }
+    .shape5 { width: 15px; height: 15px; left: 50%; top: 100%; animation-delay: 8s; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 30px;
+      }
+      .image-container {
+        margin-top: 40px;
+      }
+      .typing {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- OBJEK MELAYANG -->
+  <div class="floating shape1"></div>
+  <div class="floating shape2"></div>
+  <div class="floating shape3"></div>
+  <div class="floating shape4"></div>
+  <div class="floating shape5"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="content">
+      <h1>Hi, I'm <span>Alinee</span></h1>
+      <h2 class="typing">Frontend Developer</h2>
+      <p>
+        Saya seorang Web Developer dan Editor dengan pengalaman 1 tahun. 
+        Khususnya pada Front-End. Saya dapat membuat website sederhana seperti ini 
+        dan memiliki pengalaman dalam dunia editing video dan foto. 
+        Saya juga tertarik dengan dunia Ethical Hacking seperti Penetration Testing.
+      </p>
+
+      <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111425.png" alt="YouTube"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="GitHub"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+      </div>
+
+      <a href="#" class="btn">Contact Me</a>
+    </div>
+
+    <div class="image-container">
+      <div class="glow-circle">
+        <img src="img/ChatGPT Image 26 Okt 2025, 08.04.04.png" alt="Foto Profil">
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

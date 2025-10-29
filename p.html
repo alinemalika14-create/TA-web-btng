@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alinee – Portofolio Neon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* 🎨 Warna & efek custom */
+      :root {
+        --pink: #ff66c4;
+        --cyan: #00fff5;
+      }
+
+      body {
+        background-color: #0b0b0b;
+        font-family: "Poppins", sans-serif;
+        color: #ddd;
+        scroll-behavior: smooth;
+      }
+      /* ✨ Elemen latar belakang */
+      .background-shapes {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .shape {
+        position: absolute;
+        opacity: 0.15;
+        animation: spin 20s linear infinite;
+      }
+
+      .shape.circle {
+        border-radius: 50%;
+        border: 2px solid var(--cyan);
+      }
+
+      .shape.square {
+        border: 2px solid var(--pink);
+      }
+
+      .shape.triangle {
+        width: 0;
+        height: 0;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 70px solid var(--cyan);
+        opacity: 0.12;
+      }
+
+      /* Animasi berputar lambat */
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ✨ Efek glow dan animasi umum */
+      .neon-text {
+        text-shadow: 0 0 10px var(--cyan), 0 0 20px var(--pink);
+      }
+
+      .glow-border {
+        box-shadow: 0 0 15px var(--cyan), 0 0 25px var(--pink);
+      }
+
+      .glow-pulse {
+        animation: pulse 3s infinite alternate;
+      }
+
+      @keyframes pulse {
+        from {
+          box-shadow: 0 0 15px var(--cyan);
+        }
+        to {
+          box-shadow: 0 0 35px var(--pink);
+        }
+      }
+
+      .neon-text {
+        text-shadow: 0 0 10px var(--cyan), 0 0 20px var(--pink);
+      }
+
+      .glow-border {
+        box-shadow: 0 0 15px var(--cyan), 0 0 25px var(--pink);
+      }
+
+      .glow-pulse {
+        animation: pulse 3s infinite alternate;
+      }
+
+      @keyframes pulse {
+        from {
+          box-shadow: 0 0 15px var(--cyan);
+        }
+        to {
+          box-shadow: 0 0 35px var(--pink);
+        }
+      }
+
+      .float {
+        animation: float 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes float {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-15px);
+        }
+      }
+
+      .hover-glow:hover {
+        box-shadow: 0 0 20px var(--pink), 0 0 30px var(--cyan);
+        transform: scale(1.05);
+      }
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 50;
+        backdrop-filter: blur(6px);
+      }
+      .modal:target {
+        display: flex;
+        animation: fadeIn 0.4s ease-in-out;
+      }
+      .modal-content {
+        background-color: #0f0f0f;
+        border-radius: 15px;
+        padding: 1.5rem;
+        max-width: 400px;
+        text-align: center;
+        position: relative;
+        animation: zoomIn 0.4s ease-in-out;
+        border: 2px solid var(--neon);
+        box-shadow: 0 0 30px var(--neon);
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: var(--neon);
+        font-size: 22px;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .close-btn:hover {
+        color: var(--pink);
+        transform: rotate(90deg);
+      }
+
+      /* Animasi */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="relative overflow-x-hidden">
+    <div class="background-shapes">
+      <div
+        class="shape circle"
+        style="
+          width: 150px;
+          height: 150px;
+          top: 10%;
+          left: 15%;
+          animation-duration: 25s;
+        "
+      ></div>
+      <div
+        class="shape square"
+        style="
+          width: 120px;
+          height: 120px;
+          top: 70%;
+          left: 75%;
+          animation-duration: 30s;
+        "
+      ></div>
+      <div
+        class="shape triangle"
+        style="top: 50%; left: 40%; animation-duration: 35s"
+      ></div>
+      <div
+        class="shape circle"
+        style="
+          width: 200px;
+          height: 200px;
+          top: 80%;
+          left: 10%;
+          animation-duration: 40s;
+        "
+      ></div>
+      <div
+        class="shape square"
+        style="
+          width: 100px;
+          height: 100px;
+          top: 25%;
+          left: 80%;
+          animation-duration: 22s;
+        "
+      ></div>
+    </div>
+
+    <!-- 🌟 Navbar -->
+    <nav
+      class="fixed top-0 w-full flex justify-between items-center px-10 py-5 bg-black/80 backdrop-blur-lg z-50"
+    >
+      <h1 class="text-xl font-bold text-[var(--cyan)] neon-text">Portfolio</h1>
+      <ul class="flex gap-8 text-gray-300">
+        <li>
+          <a href="#home" class="hover:text-[var(--cyan)] transition">Home</a>
+        </li>
+        <li>
+          <a href="#about" class="hover:text-[var(--cyan)] transition">About</a>
+        </li>
+        <li>
+          <a href="#portfolio" class="hover:text-[var(--cyan)] transition"
+            >Portfolio</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="hover:text-[var(--cyan)] transition"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- 💫 Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex flex-col md:flex-row justify-center items-center px-10 md:px-20 pt-40 text-center md:text-left"
+    >
+      <div class="max-w-lg space-y-5">
+        <h1 class="text-4xl md:text-5xl font-bold text-white">
+          Hi, I'm <span class="text-[var(--cyan)] neon-text">Alinee</span>
+        </h1>
+        <h2 class="text-[var(--cyan)] text-xl font-medium">Developer Pemula</h2>
+        <p class="text-gray-400 leading-relaxed">
+          Saya seorang Web Developer Pemula yg sedang belajar membuat website
+          profesional menggunakan HTML, CSS, dan Tailwind. Tujuan saya adalah
+          menguasai desain web responsif dan interaktif untuk menciptakan
+          pengalaman pengguna yang menarik.
+        </p>
+
+        <div class="flex justify-center md:justify-start gap-4 mt-4">
+          <a href="#"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111425.png"
+              class="w-7 opacity-80 hover:opacity-100 hover:scale-110 transition"
+          /></a>
+          <a href="#"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+              class="w-7 opacity-80 hover:opacity-100 hover:scale-110 transition"
+          /></a>
+          <a href="#"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png"
+              class="w-7 opacity-80 hover:opacity-100 hover:scale-110 transition"
+          /></a>
+          <a href="#"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+              class="w-7 opacity-80 hover:opacity-100 hover:scale-110 transition"
+          /></a>
+        </div>
+
+        <a
+          href="#about"
+          class="inline-block mt-6 bg-gradient-to-r from-[var(--cyan)] to-[var(--pink)] text-black font-semibold px-6 py-2 rounded-full hover-glow transition"
+        >
+          About Me
+        </a>
+      </div>
+
+      <div class="mt-10 md:mt-0 md:ml-10 float">
+        <div class="rounded-full p-2 glow-border glow-pulse">
+          <img
+            src="LAYLA.png"
+            alt="Foto Profil"
+            class="w-64 h-64 md:w-72 md:h-72 object-cover rounded-full border-2 border-[var(--cyan)] shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 💖 About Section -->
+    <section
+      id="about"
+      class="py-24 px-8 md:px-20 flex flex-col items-center text-center md:text-left"
+    >
+      <h2 class="text-3xl font-bold text-[var(--pink)] neon-text mb-12">
+        About Me
+      </h2>
+
+      <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+        <div
+          class="bg-black/30 border border-[var(--cyan)] rounded-2xl p-5 glow-border hover-glow max-w-xs transition"
+        >
+          <img
+            src="LA.png"
+            alt="Alinee"
+            class="rounded-xl w-full object-cover"
+          />
+        </div>
+
+        <div
+          class="bg-black/30 border border-[var(--cyan)] rounded-2xl p-8 max-w-lg glow-border hover-glow transition"
+        >
+          <h3 class="text-[var(--cyan)] text-xl font-semibold mb-3">
+            Passionate Developer
+          </h3>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            Saya adalah seorang mahasiswa Teknik Informatika yang baru masuk
+            dalam dunia percodingan, tinggal di kendal kelahiran blora, hobi
+            tidur, makan, menggambar, membaca, scroll tik tok
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 text-left">
+            <div
+              class="bg-black/40 rounded-lg p-3 border border-[var(--cyan)] text-[var(--cyan)] font-semibold flex justify-between"
+            >
+              <span>HTML</span> <span>80%</span>
+            </div>
+            <div
+              class="bg-black/40 rounded-lg p-3 border border-[var(--cyan)] text-[var(--cyan)] font-semibold flex justify-between"
+            >
+              <span>CSS</span> <span>75%</span>
+            </div>
+
+            <div
+              class="bg-black/40 rounded-lg p-3 border border-[var(--cyan)] text-[var(--cyan)] font-semibold flex justify-between"
+            >
+              <span>PHP</span> <span>15%</span>
+            </div>
+          </div>
+
+          <a
+            href="#"
+            class="inline-block mt-6 bg-gradient-to-r from-[var(--cyan)] to-[var(--pink)] text-black font-semibold px-6 py-2 rounded-full hover-glow transition"
+          >
+            Download CV
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🚀 Portfolio Section -->
+    <section id="portfolio" class="py-24 px-8 md:px-20 text-center">
+      <h2 class="text-3xl font-bold text-[var(--cyan)] neon-text mb-12">
+        Projects
+      </h2>
+
+      <!-- Tombol kategori -->
+
+      <!-- Kartu Project -->
+      <div class="grid md:grid-cols-3 gap-8 justify-center">
+        <!-- Project 1 -->
+        <div
+          class="bg-black/40 rounded-xl p-4 border border-[var(--cyan)] glow-border hover-glow transition"
+        >
+          <img
+            src="LAYLA.png"
+            alt="Project 1"
+            class="rounded-lg mb-4 w-full max-h-40 object-cover mx-auto"
+          />
+          <h3 class="text-[var(--cyan)] font-semibold text-lg">
+            E-Commerce Website
+          </h3>
+          <p class="text-gray-400 text-sm mb-3">
+            Platform belanja online modern dengan integrasi pembayaran.
+          </p>
+          <div class="flex justify-between items-center text-sm">
+            <a href="#modal1" class="text-[var(--pink)] hover:underline"
+              >Di liat juga boleh</a
+            >
+            <button
+              class="px-4 py-1 bg-[var(--cyan)] text-black rounded-md font-semibold"
+            >
+              Detail
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div
+          class="bg-black/40 rounded-xl p-4 border border-[var(--cyan)] glow-border hover-glow transition"
+        >
+          <img
+            src="LAYLA.png"
+            alt="Project 2"
+            class="rounded-lg mb-4 w-full max-h-40 object-cover mx-auto"
+          />
+          <h3 class="text-[var(--cyan)] font-semibold text-lg">
+            Portfolio Template
+          </h3>
+          <p class="text-gray-400 text-sm mb-3">
+            Situs web portofolio responsif untuk profesinoal kreatif.
+          </p>
+          <div class="flex justify-between items-center text-sm">
+            <a href="#modal2" class="text-[var(--pink)] hover:underline"
+              >Di liat juga boleh</a
+            >
+            <button
+              class="px-4 py-1 bg-[var(--cyan)] text-black rounded-md font-semibold"
+            >
+              Detail
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div
+          class="bg-black/40 rounded-xl p-4 border border-[var(--cyan)] glow-border hover-glow transition"
+        >
+          <img
+            src="LAYLA.png"
+            alt="Project 3"
+            class="rounded-lg mb-4 w-full max-h-40 object-cover mx-auto"
+          />
+          <h3 class="text-[var(--cyan)] font-semibold text-lg">
+            Dashboard Admin
+          </h3>
+          <p class="text-gray-400 text-sm mb-3">
+            Dasbor admin yang bersih dan modern.
+          </p>
+          <div class="flex justify-between items-center text-sm">
+            <a href="#modal3" class="text-[var(--pink)] hover:underline"
+              >Di liat juga boleh</a
+            >
+            <button
+              class="px-4 py-1 bg-[var(--cyan)] text-black rounded-md font-semibold"
+            >
+              Detail
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-black/40 rounded-xl p-4 border border-[var(--cyan)] glow-border hover-glow transition"
+        >
+          <img
+            src="LAYLA.png"
+            alt="Project 4"
+            class="rounded-lg mb-4 w-full max-h-40 object-cover mx-auto"
+          />
+          <h3 class="text-[var(--cyan)] font-semibold text-lg">
+            Entah lah bingung
+          </h3>
+          <p class="text-gray-400 text-sm mb-3">Kak mau kenalan nggak?.</p>
+          <div class="flex justify-between items-center text-sm">
+            <a href="#modal4" class="text-[var(--pink)] hover:underline"
+              >Di liat juga boleh</a
+            >
+            <button
+              class="px-4 py-1 bg-[var(--cyan)] text-black rounded-md font-semibold"
+            >
+              Detail
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-black/40 rounded-xl p-4 border border-[var(--cyan)] glow-border hover-glow transition"
+        >
+          <img
+            src="LAYLA.png"
+            alt="Project 3"
+            class="rounded-lg mb-4 w-full max-h-40 object-cover mx-auto"
+          />
+          <h3 class="text-[var(--cyan)] font-semibold text-lg">
+            Mau nggak Mutualan ig?
+          </h3>
+          <p class="text-gray-400 text-sm mb-3">Mau dong yaaaw.</p>
+          <div class="flex justify-between items-center text-sm">
+            <a href="#modal5" class="text-[var(--pink)] hover:underline"
+              >Di liat juga boleh</a
+            >
+            <button
+              class="px-4 py-1 bg-[var(--cyan)] text-black rounded-md font-semibold"
+            >
+              Detail
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-black/40 rounded-xl p-4 border border-[var(--cyan)] glow-border hover-glow transition"
+        >
+          <img
+            src="LAYLA.png"
+            alt="Project 3"
+            class="rounded-lg mb-4 w-full max-h-40 object-cover mx-auto"
+          />
+          <h3 class="text-[var(--cyan)] font-semibold text-lg">
+            ada hadiah nya nggak?
+          </h3>
+          <p class="text-gray-400 text-sm mb-3">harus adaa looo.</p>
+          <div class="flex justify-between items-center text-sm">
+            <a href="#modal5" class="text-[var(--pink)] hover:underline"
+              >Di liat juga boleh</a
+            >
+            <button
+              class="px-4 py-1 bg-[var(--cyan)] text-black rounded-md font-semibold"
+            >
+              Detail
+            </button>
+          </div>
+        </div>
+
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <a href="#project 1" class="close-btn">&times;</a>
+            <img
+              src="LAYLA.png"
+              class="rounded mb-4 object-cover w-full max-h-48"
+              alt=""
+            />
+            <h2 class="text-xl font-semibold text-[var(--neon)] mb-2">
+              E-Commerce Website
+            </h2>
+            <p class="text-gray-300 text-sm mb-4">Jomblo nggak kak?.</p>
+            <a
+              href="#"
+              class="px-4 py-2 bg-[var(--pink)] text-white font-semibold rounded-md"
+              >Kembali</a
+            >
+          </div>
+        </div>
+
+        <!-- MODAL 2 -->
+        <div id="modal2" class="modal">
+          <div class="modal-content">
+            <a href="#project 2" class="close-btn">&times;</a>
+            <img
+              src="LAYLA.png"
+              class="rounded mb-4 object-cover w-full max-h-48"
+              alt=""
+            />
+            <h2 class="text-xl font-semibold text-[var(--neon)] mb-2">
+              Portfolio Template
+            </h2>
+            <p class="text-gray-300 text-sm mb-4">
+              Situs web portofolio responsif untuk profesional kreatif
+              menggunakan tata letak dan transisi modern.
+            </p>
+            <a
+              href="#"
+              class="px-4 py-2 bg-[var(--pink)] text-white font-semibold rounded-md"
+              >Kembali</a
+            >
+          </div>
+        </div>
+
+        <!-- MODAL 3 -->
+        <div id="modal3" class="modal">
+          <div class="modal-content">
+            <a href="#project 3" class="close-btn">&times;</a>
+            <img
+              src="LAYLA.png"
+              class="rounded mb-4 object-cover w-full max-h-48"
+              alt=""
+            />
+            <h2 class="text-xl font-semibold text-[var(--neon)] mb-2">
+              Dashboard Admin
+            </h2>
+            <p class="text-gray-300 text-sm mb-4">
+              Dah lah bingung aing, ngantuk.
+            </p>
+            <a
+              href="#"
+              class="px-4 py-2 bg-[var(--pink)] text-white font-semibold rounded-md"
+              >Kembali</a
+            >
+          </div>
+        </div>
+
+        <div id="modal4" class="modal">
+          <div class="modal-content">
+            <a href="#project 4" class="close-btn">&times;</a>
+            <img
+              src="LAYLA.png"
+              class="rounded mb-4 object-cover w-full max-h-48"
+              alt=""
+            />
+            <h2 class="text-xl font-semibold text-[var(--neon)] mb-2">
+              Mau dong yawwww;>
+            </h2>
+            <p class="text-gray-300 text-sm mb-4">
+              Kenalin ih kak, aku Aline Malika gak usah panjang panjang, kalo
+              kakak nya siapa?.
+            </p>
+            <a
+              href="#"
+              class="px-4 py-2 bg-[var(--pink)] text-white font-semibold rounded-md"
+              >Kembali</a
+            >
+          </div>
+        </div>
+
+        <div id="modal5" class="modal">
+          <div class="modal-content">
+            <a href="#project 5" class="close-btn">&times;</a>
+            <img
+              src="LAYLA.png"
+              class="rounded mb-4 object-cover w-full max-h-48"
+              alt=""
+            />
+            <h2 class="text-xl font-semibold text-[var(--neon)] mb-2">
+              Al_inaaika
+            </h2>
+            <p class="text-gray-300 text-sm mb-4">
+              Jangan lupa looooo, seperti kata kakak relasi itu penting eakkk.
+            </p>
+            <a
+              href="#"
+              class="px-4 py-2 bg-[var(--pink)] text-white font-semibold rounded-md"
+              >Kembali</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="flex flex-col items-center justify-center flex-grow text-center px-4"
+    >
+      <h2 class="text-4xl font-bold neon-text mb-8">Contact</h2>
+      <div class="bg-[#111] p-8 rounded-2xl shadow-lg w-full max-w-md">
+        <h3 class="text-[#00ffcc] text-xl mb-6 font-semibold">Get in Touch</h3>
+
+        <form class="space-y-4">
+          <input
+            type="text"
+            placeholder="Nama"
+            class="w-full p-3 rounded-lg bg-[#1a1a1a] border border-[#ff66c4] text-white focus:outline-none focus:border-[#00ffcc]"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="w-full p-3 rounded-lg bg-[#1a1a1a] border border-[#ff66c4] text-white focus:outline-none focus:border-[#00ffcc]"
+          />
+          <textarea
+            placeholder="Pesan"
+            rows="4"
+            class="w-full p-3 rounded-lg bg-[#1a1a1a] border border-[#ff66c4] text-white focus:outline-none focus:border-[#00ffcc]"
+          ></textarea>
+
+          <div class="flex justify-center gap-4 mt-4">
+            <a
+              href="#"
+              class="p-3 bg-[#00ffcc22] rounded-full hover:bg-[#00ffcc55] transition"
+              ><i class="fa-brands fa-tiktok text-[#00ffcc]"></i
+            ></a>
+            <a
+              href="#"
+              class="p-3 bg-[#00ffcc22] rounded-full hover:bg-[#00ffcc55] transition"
+              ><i class="fa-brands fa-instagram text-[#00ffcc]"></i
+            ></a>
+            <a
+              href="#"
+              class="p-3 bg-[#00ffcc22] rounded-full hover:bg-[#00ffcc55] transition"
+              ><i class="fa-brands fa-github text-[#00ffcc]"></i
+            ></a>
+          </div>
+
+          <button
+            type="submit"
+            class="mt-6 w-full bg-[#00fff5] text-black py-3 rounded-lg font-semibold hover:bg-[#ff66c4] transition"
+          >
+            Kirim
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Font Awesome Icons -->
+  </body>
+</html>

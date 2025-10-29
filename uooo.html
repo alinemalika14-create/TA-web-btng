@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Video</title>
+    <style>
+      /* 🎨 Gaya Umum */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f5f0;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        text-align: center;
+        background-color: #a67b5b;
+        color: white;
+        padding: 20px 0;
+        font-size: 24px;
+        letter-spacing: 1px;
+      }
+
+      .galeri {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 40px;
+        justify-items: center;
+      }
+
+      .video-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      video {
+        width: 100%;
+        display: block;
+      }
+
+      .deskripsi {
+        padding: 15px;
+        text-align: center;
+      }
+
+      .deskripsi h3 {
+        margin: 10px 0 5px;
+        font-size: 18px;
+        color: #5a3e2b;
+      }
+
+      .deskripsi p {
+        font-size: 14px;
+        color: #666;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #a67b5b;
+        color: white;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>🎬 Galeri Video Saya</header>
+
+    <section class="galeri">
+      <div class="video-card">
+        <video controls>
+          <source src="Video WhatsApp 2025-10-25 pukul 21.13.05_faa17cf7.mp4" type="video/mp4" />
+          Browser kamu tidak mendukung tag video.
+        </video>
+        <div class="deskripsi">
+          <h3>Video Pertama</h3>
+          <p>Cuplikan video dari koleksi pribadi.</p>
+        </div>
+      </div>
+
+      <!-- Kamu bisa menambahkan video lain di sini -->
+      <!-- Contoh:
+      <div class="video-card">
+        <video controls>
+          <source src="video2.mp4" type="video/mp4" />
+        </video>
+        <div class="deskripsi">
+          <h3>Video Kedua</h3>
+          <p>Deskripsi singkat video kedua.</p>
+        </div>
+      </div>
+      -->
+    </section>
+
+    <footer>© 2025 Galeri Video – Dibuat dengan HTML & CSS</footer>
+  </body>
+</html>
